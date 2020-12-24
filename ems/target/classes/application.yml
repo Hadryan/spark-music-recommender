@@ -1,0 +1,35 @@
+
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  application:
+    name: ems  #在微服务中的名称
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver #注册驱动
+    url: jdbc:mysql://localhost:3306/ems?characterEncoding=UTF-8
+    username: root
+    password: root
+  data:
+    mongodb:
+      host: tuijian
+      database: recommender
+  jedis :
+    pool :
+      host : 127.0.0.1
+      port : 6379
+      config :
+        maxTotal: 100
+        maxIdle: 10
+        maxWaitMillis : 100000
+
+server:
+  servlet:
+    context-path: /ems  #设置项目名称
+    jsp:
+      init-parameters:
+        development: true #开启jsp页面的热部署
+mybatis:
+  mapper-locations: classpath:com/wyh/ems/mapper/*.xml #mapper配置文件的位置
+  type-aliases-package: com.wyh.ems.entity

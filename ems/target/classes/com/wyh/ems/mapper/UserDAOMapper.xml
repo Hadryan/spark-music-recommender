@@ -1,0 +1,28 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyh.ems.dao.UserDAO">
+
+
+    <!--用户注册-->
+    <insert id="save" parameterType="User">
+        insert into t_user values (#{id},#{username},#{realname},#{password},#{sex})
+    </insert>
+
+    <!--为用户创建推荐表-->
+    <update id="createTuijianTable" parameterType="String">
+        CREATE TABLE ${userid}(
+        `song_name` varchar(64),
+        `song_length` varchar(64),
+        `genre_ids` varchar(64),
+        `artist_name` varchar(64),
+        `musician` varchar(64),
+        `zuoCijJia` varchar(64),
+        `language` varchar(64))
+    </update>
+
+
+    <!--登陆-->
+    <select id="findByUsernameAndPassword" resultType="User">
+        select id,username,realname,password,sex from t_user where username=#{username} and password=#{password}
+    </select>
+
+</mapper>

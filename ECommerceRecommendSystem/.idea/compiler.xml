@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ContentRecommender" />
+        <module name="DataLoader" />
+        <module name="FlinkWyh" />
+        <module name="ItemCFRecommender" />
+        <module name="KafkaStreaming" />
+        <module name="OfflineRecommender" />
+        <module name="OnlineRecommender" />
+        <module name="StatisticsRecommender" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="businessServer" target="1.8" />
+      <module name="flink-demo" target="1.8" />
+      <module name="FlinkItemCF" target="1.8" />
+      <module name="FlinkItemCFRecommender" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
